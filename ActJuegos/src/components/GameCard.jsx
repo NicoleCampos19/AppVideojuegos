@@ -13,13 +13,13 @@ const GameCard = ({ id, title, genre, difficulty, platform, release, onEdit, onD
       <div className="flex justify-center gap-6">
         <button
           onClick={() => onDelete(id)}
-          className="bg-indigo-500 text-white text-sm px-4 py-1 rounded-md hover:bg-indigo-600 transition-all"
+          className="bg-pink-500 text-white text-sm px-4 py-1 rounded-md hover:bg-indigo-600 transition-all"
         >
           Eliminar
         </button>
         <button
           onClick={() => onEdit(id)}
-          className="text-indigo-600 text-sm hover:underline"
+          className="text-pink-500 text-sm hover:underline"
         >
           Editar
         </button>

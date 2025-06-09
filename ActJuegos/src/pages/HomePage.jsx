@@ -7,7 +7,7 @@ import useDataGames from '../components/Games/hooks/useDataGames';
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState('listado');
-  const { dataGames: games, updateGame, deleteGame } = useDataGames();
+  const { dataGames: games, createGame, updateGame, deleteGame } = useDataGames();
   const [gameToEdit, setGameToEdit] = useState(null);
   const [filteredGames, setFilteredGames] = useState([]);
 
@@ -23,10 +23,12 @@ const HomePage = () => {
   const handleFormSubmit = (data) => {
     if (gameToEdit) {
       updateGame(gameToEdit.id, data);
+    } else {
+      createGame(data);
     }
     setGameToEdit(null);
     setActiveTab('listado');
-  };
+  };  
 
   const handleSearch = (query) => {
     const filtered = (games || []).filter((game) =>
